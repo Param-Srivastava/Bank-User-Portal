@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="login.css">
+<title>Login Page</title>
+</head>
+<body>
+  <div id="head1" style="margin-top:80px; text-align:center;">
+  <img class="headerimg" src="bank_imag.jpg">
+  <h1><strong>MGS Bank</strong></h1>
+  </div>
+  <div id="login_form">
+   <div class="new"><span>Enter Login Details</span></div>
+   <form name="f1" action="post" id="f1">
+    <table>
+    <tr>
+	<td class="f1_label">User Name:</td>
+	<td><input type="text" placeholder="Username" name="username" id="username" value="" autocomplete="off"></td>
+	</tr>
+	<tr>
+	<td class="f1_label">Password:</td>
+	<td><input type="password" placeholder="Password" name="password" id="password" value="" autocomplete="off"></td>
+	</tr>
+	<tr>
+		<td>
+		<input type="submit" name="login" onClick="auth(event)" value="Log in" style="font-size:18px;">
+		</td>
+		<td>
+		<input type="reset" name="reset" value="Reset" style="font-size:18px;">
+		</td>
+	</tr>
+    </table>
+   </form>
+  </div>
+<script>
+function auth(event){
+	event.preventDefault();
+	
+	var email = document.getElementById("username").value;
+	var password = document.getElementById("password").value;
+
+	if(email == "param_0206" && password == "123")
+	{
+	    window.location.replace("./displaytable");
+	    alert(`Successful Login! Welcome ${email},Please Click Ok to be redirected to the home page.`);
+
+	}
+	else {
+	   alert("Invalid Information! Please try again.");
+	    return ;
+	}
+}
+</script>
+</body>
+</html>
